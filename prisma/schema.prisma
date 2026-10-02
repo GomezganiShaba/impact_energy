@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Inquiry {
+  id           String        @id @default(cuid())
+  createdAt    DateTime      @default(now())
+  name         String
+  phone        String
+  email        String?
+  service      String
+  location     String
+  propertyType String
+  message      String?
+  status       InquiryStatus @default(NEW)
+  assignedTo   String?
+  notes        String?
+  sourcePath   String
+  ipHash       String
+  userAgent    String?
+  emailLogs    EmailLog[]
+}
+
+model EmailLog {
+  id         String      @id @default(cuid())
+  inquiryId  String
+  inquiry    Inquiry     @relation(fields: [inquiryId], references: [id])
+  type       EmailType
+  to         String
+  providerId String?
+  status     EmailStatus
+  error      String?
+  createdAt  DateTime    @default(now())
+}
+
+enum InquiryStatus {
+  NEW
+  CONTACTED
+  QUOTED
+  WON
+  LOST
+}
+
+enum EmailType {
+  TEAM_NOTIFICATION
+  CUSTOMER_CONFIRMATION
+  STATUS_UPDATE
+}
+
+enum EmailStatus {
+  SENT
+  FAILED
+}

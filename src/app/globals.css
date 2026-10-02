@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0e2318;
+  --paper: #f6e79a;
+  --paper-deep: #efdb74;
+  --on-dark: #fbe98f;
+  --dusk: #163a28;
+  --dusk-deep: #08170f;
+  --gold: #f2b705;
+  --gold-hi: #ffe066;
+  --leaf: #2e7d4f;
+  --leaf-deep: #1e5636;
+
+  --font-fraunces: "Fraunces", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--ink);
+  background-color: var(--paper);
+  font-family: var(--font-inter);
+}
+
+/* Focus ring - gold for all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* Photo treatment - applied to all site images except the logo */
+.photo-filter {
+  filter: sepia(0.45) saturate(1.6) hue-rotate(52deg) brightness(0.92);
+}
+
+/* Ken-burns animation for project images */
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.ken-burns {
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
+/* Shine sweep for buttons */
+@keyframes shineSweep {
+  from {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  to {
+    transform: translateX(250%) skewX(-15deg);
+  }
+}
+
+/* Soft pulse for hero button */
+@keyframes softPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 183, 5, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(242, 183, 5, 0);
+  }
+}
+
+.btn-pulse {
+  animation: softPulse 2.5s ease-in-out infinite;
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+  }
+  .ken-burns {
+    animation: none !important;
+  }
+  .btn-pulse {
+    animation: none !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dusk-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--leaf);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
