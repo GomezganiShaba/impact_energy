@@ -1,32 +1,24 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { loginAction } from "./actions";
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isPending, startTransition] = useTransition();
-  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     startTransition(async () => {
-      const result = await signIn("credentials", {
-        email,
-        password,
-        redirect: false,
-      });
+      const result = await loginAction(email, password);
       if (result?.error) {
-        setError("Invalid email or password.");
-      } else {
-        router.push("/admin/inquiries");
-        router.refresh();
+        setError(result.error);
       }
+      // On success the server action calls Next.js redirect() which navigates automatically
     });
   };
 
@@ -64,7 +56,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full rounded-lg border border-ink/20 bg-paper-deep px-4 py-3 text-ink text-sm focus:outline-none focus:border-leaf focus:ring-1 focus:ring-leaf"
-              placeholder="admin@example.com"
+              placeholder="admin@ies.engineer"
             />
           </div>
 
@@ -92,9 +84,19 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={isPending}
-            className="w-full py-3 rounded-lg bg-gold text-dusk-deep font-bold text-sm hover:bg-gold-hi transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full py-3 rounded-lg bg-gold text-dusk-deep font-bold text-sm hover:bg-gold-hi transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            {isPending ? "Signing in..." : "Sign in"}
+            {isPending ? (
+              <>
+                <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                </svg>
+                Signing in...
+              </>
+            ) : (
+              "Sign in"
+            )}
           </button>
         </form>
       </div>

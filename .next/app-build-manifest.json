@@ -6,10 +6,40 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/quote/page": [
+    "/mail/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/quote/page.js"
+      "static/chunks/app/mail/layout.js"
+    ],
+    "/mail/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/mail/page.js"
+    ],
+    "/api/mail/send/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/mail/send/route.js"
+    ],
+    "/api/mail/webhook/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/mail/webhook/route.js"
+    ],
+    "/admin/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/layout.js"
+    ],
+    "/admin/inquiries/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/inquiries/layout.js"
+    ],
+    "/admin/inquiries/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/admin/inquiries/page.js"
     ]
   }
 }

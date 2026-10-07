@@ -14,6 +14,18 @@
   --leaf: #2e7d4f;
   --leaf-deep: #1e5636;
 
+  /* RGB channels for Tailwind opacity modifier support (e.g. text-gold/80) */
+  --ink-rgb: 14 35 24;
+  --paper-rgb: 246 231 154;
+  --paper-deep-rgb: 239 219 116;
+  --on-dark-rgb: 251 233 143;
+  --dusk-rgb: 22 58 40;
+  --dusk-deep-rgb: 8 23 15;
+  --gold-rgb: 242 183 5;
+  --gold-hi-rgb: 255 224 102;
+  --leaf-rgb: 46 125 79;
+  --leaf-deep-rgb: 30 86 54;
+
   --font-fraunces: "Fraunces", serif;
   --font-inter: "Inter", sans-serif;
 }

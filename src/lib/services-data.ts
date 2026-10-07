@@ -414,3 +414,4 @@ export const SERVICES_DETAILED: ServiceDetail[] = [
 export function getServiceBySlug(slug: string): ServiceDetail | undefined {
   return SERVICES_DETAILED.find((s) => s.slug === slug);
 }
+

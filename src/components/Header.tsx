@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "#services", label: "Services" },
+  { href: "#areas", label: "Operations" },
   { href: "#process", label: "How we work" },
   { href: "#projects", label: "Projects" },
   { href: "#team", label: "Team" },
@@ -174,3 +175,4 @@ export default function Header() {
     </>
   );
 }
+

@@ -1,5 +1,84 @@
 {
-  "node": {},
+  "node": {
+    "40208166259fb96d415520411a1945f56099292690": {
+      "workers": {
+        "app/mail/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22F%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%2240208166259fb96d415520411a1945f56099292690%22%2C%22exportedName%22%3A%22sendEmailAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240cc19443b9c5a6cad37ff122675fcfc3acb309540%22%2C%22exportedName%22%3A%22deleteMessageAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2%22%2C%22exportedName%22%3A%22toggleStarAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260afc3110c2b7815dc0f87601e721eafa5a7779398%22%2C%22exportedName%22%3A%22moveMessageFolderAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260fb7cffa1b4db4688f0729b8860f1302857ea1283%22%2C%22exportedName%22%3A%22markMessageReadAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2270035d44e84d3d9b9509a04231e4edc945ab42a590%22%2C%22exportedName%22%3A%22getMailData%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/mail/page": "action-browser"
+      },
+      "filename": "../F:\\impact_energy\\src\\app\\mail\\actions.ts",
+      "exportedName": "sendEmailAction"
+    },
+    "40cc19443b9c5a6cad37ff122675fcfc3acb309540": {
+      "workers": {
+        "app/mail/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22F%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%2240208166259fb96d415520411a1945f56099292690%22%2C%22exportedName%22%3A%22sendEmailAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240cc19443b9c5a6cad37ff122675fcfc3acb309540%22%2C%22exportedName%22%3A%22deleteMessageAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2%22%2C%22exportedName%22%3A%22toggleStarAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260afc3110c2b7815dc0f87601e721eafa5a7779398%22%2C%22exportedName%22%3A%22moveMessageFolderAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260fb7cffa1b4db4688f0729b8860f1302857ea1283%22%2C%22exportedName%22%3A%22markMessageReadAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2270035d44e84d3d9b9509a04231e4edc945ab42a590%22%2C%22exportedName%22%3A%22getMailData%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/mail/page": "action-browser"
+      },
+      "filename": "../F:\\impact_energy\\src\\app\\mail\\actions.ts",
+      "exportedName": "deleteMessageAction"
+    },
+    "40db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2": {
+      "workers": {
+        "app/mail/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22F%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%2240208166259fb96d415520411a1945f56099292690%22%2C%22exportedName%22%3A%22sendEmailAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240cc19443b9c5a6cad37ff122675fcfc3acb309540%22%2C%22exportedName%22%3A%22deleteMessageAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2%22%2C%22exportedName%22%3A%22toggleStarAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260afc3110c2b7815dc0f87601e721eafa5a7779398%22%2C%22exportedName%22%3A%22moveMessageFolderAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260fb7cffa1b4db4688f0729b8860f1302857ea1283%22%2C%22exportedName%22%3A%22markMessageReadAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2270035d44e84d3d9b9509a04231e4edc945ab42a590%22%2C%22exportedName%22%3A%22getMailData%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/mail/page": "action-browser"
+      },
+      "filename": "../F:\\impact_energy\\src\\app\\mail\\actions.ts",
+      "exportedName": "toggleStarAction"
+    },
+    "60afc3110c2b7815dc0f87601e721eafa5a7779398": {
+      "workers": {
+        "app/mail/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22F%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%2240208166259fb96d415520411a1945f56099292690%22%2C%22exportedName%22%3A%22sendEmailAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240cc19443b9c5a6cad37ff122675fcfc3acb309540%22%2C%22exportedName%22%3A%22deleteMessageAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2%22%2C%22exportedName%22%3A%22toggleStarAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260afc3110c2b7815dc0f87601e721eafa5a7779398%22%2C%22exportedName%22%3A%22moveMessageFolderAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260fb7cffa1b4db4688f0729b8860f1302857ea1283%22%2C%22exportedName%22%3A%22markMessageReadAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2270035d44e84d3d9b9509a04231e4edc945ab42a590%22%2C%22exportedName%22%3A%22getMailData%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/mail/page": "action-browser"
+      },
+      "filename": "../F:\\impact_energy\\src\\app\\mail\\actions.ts",
+      "exportedName": "moveMessageFolderAction"
+    },
+    "60fb7cffa1b4db4688f0729b8860f1302857ea1283": {
+      "workers": {
+        "app/mail/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22F%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%2240208166259fb96d415520411a1945f56099292690%22%2C%22exportedName%22%3A%22sendEmailAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240cc19443b9c5a6cad37ff122675fcfc3acb309540%22%2C%22exportedName%22%3A%22deleteMessageAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2%22%2C%22exportedName%22%3A%22toggleStarAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260afc3110c2b7815dc0f87601e721eafa5a7779398%22%2C%22exportedName%22%3A%22moveMessageFolderAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260fb7cffa1b4db4688f0729b8860f1302857ea1283%22%2C%22exportedName%22%3A%22markMessageReadAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2270035d44e84d3d9b9509a04231e4edc945ab42a590%22%2C%22exportedName%22%3A%22getMailData%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/mail/page": "action-browser"
+      },
+      "filename": "../F:\\impact_energy\\src\\app\\mail\\actions.ts",
+      "exportedName": "markMessageReadAction"
+    },
+    "70035d44e84d3d9b9509a04231e4edc945ab42a590": {
+      "workers": {
+        "app/mail/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22F%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%2C%5B%7B%22id%22%3A%2240208166259fb96d415520411a1945f56099292690%22%2C%22exportedName%22%3A%22sendEmailAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240cc19443b9c5a6cad37ff122675fcfc3acb309540%22%2C%22exportedName%22%3A%22deleteMessageAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2240db0c8dfb1ec3f656a37abfa1492f20b4bd072fa2%22%2C%22exportedName%22%3A%22toggleStarAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260afc3110c2b7815dc0f87601e721eafa5a7779398%22%2C%22exportedName%22%3A%22moveMessageFolderAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2260fb7cffa1b4db4688f0729b8860f1302857ea1283%22%2C%22exportedName%22%3A%22markMessageReadAction%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%2C%7B%22id%22%3A%2270035d44e84d3d9b9509a04231e4edc945ab42a590%22%2C%22exportedName%22%3A%22getMailData%22%2C%22filename%22%3A%22..%2FF%3A%5C%5Cimpact_energy%5C%5Csrc%5C%5Capp%5C%5Cmail%5C%5Cactions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/mail/page": "action-browser"
+      },
+      "filename": "../F:\\impact_energy\\src\\app\\mail\\actions.ts",
+      "exportedName": "getMailData"
+    }
+  },
   "edge": {},
   "encryptionKey": "HX9pOBn+nlQzebg6sccXUxewDGSXdDCUxxLZDHnpxN4="
 }

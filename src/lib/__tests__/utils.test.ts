@@ -62,3 +62,4 @@ describe("SERVICES catalog", () => {
     expect(SERVICES.length).toBeGreaterThanOrEqual(6);
   });
 });
+

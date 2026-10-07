@@ -7,6 +7,7 @@ import { signOut } from "next-auth/react";
 
 const NAV_ITEMS = [
   { href: "/admin/inquiries", label: "Inquiries", icon: "📋" },
+  { href: "/mail", label: "Webmail", icon: "✉️", external: true },
   { href: "/", label: "View Website", icon: "🌐", external: true },
 ];
 
@@ -74,3 +75,4 @@ export default function AdminSidebar() {
     </aside>
   );
 }
+

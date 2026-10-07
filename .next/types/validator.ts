@@ -83,6 +83,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/mail/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/mail">> = Specific
+  const handler = {} as typeof import("../../src/app/mail/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
@@ -155,6 +164,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/api/mail/send/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/mail/send">> = Specific
+  const handler = {} as typeof import("../../src/app/api/mail/send/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/api/mail/webhook/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/mail/webhook">> = Specific
+  const handler = {} as typeof import("../../src/app/api/mail/webhook/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 
 
 
@@ -181,6 +208,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends LayoutConfig<"/">> = Specific
   const handler = {} as typeof import("../../src/app/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/mail/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/mail">> = Specific
+  const handler = {} as typeof import("../../src/app/mail/layout.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

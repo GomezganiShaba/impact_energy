@@ -60,3 +60,40 @@ enum EmailStatus {
   SENT
   FAILED
 }
+
+model MailMessage {
+  id          String        @id @default(cuid())
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  mailbox     String        // e.g. kombasteve@ies.engineer, lichaparichard@ies.engineer, thauzelouis@ies.engineer, info@ies.engineer
+  direction   MailDirection @default(INBOUND)
+  folder      MailFolder    @default(INBOX)
+  from        String
+  to          String
+  cc          String?
+  bcc         String?
+  subject     String
+  bodyText    String?       @db.Text
+  bodyHtml    String?       @db.Text
+  snippet     String?
+  isRead      Boolean       @default(false)
+  isStarred   Boolean       @default(false)
+  resendId    String?
+  replyToId   String?
+
+  @@index([mailbox, folder])
+  @@index([createdAt])
+}
+
+enum MailDirection {
+  INBOUND
+  OUTBOUND
+}
+
+enum MailFolder {
+  INBOX
+  SENT
+  DRAFTS
+  TRASH
+  ARCHIVE
+}

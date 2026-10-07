@@ -10,16 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "var(--ink)",
-        paper: "var(--paper)",
-        "paper-deep": "var(--paper-deep)",
-        "on-dark": "var(--on-dark)",
-        dusk: "var(--dusk)",
-        "dusk-deep": "var(--dusk-deep)",
-        gold: "var(--gold)",
-        "gold-hi": "var(--gold-hi)",
-        leaf: "var(--leaf)",
-        "leaf-deep": "var(--leaf-deep)",
+        ink: "rgb(var(--ink-rgb) / <alpha-value>)",
+        paper: "rgb(var(--paper-rgb) / <alpha-value>)",
+        "paper-deep": "rgb(var(--paper-deep-rgb) / <alpha-value>)",
+        "on-dark": "rgb(var(--on-dark-rgb) / <alpha-value>)",
+        dusk: "rgb(var(--dusk-rgb) / <alpha-value>)",
+        "dusk-deep": "rgb(var(--dusk-deep-rgb) / <alpha-value>)",
+        gold: "rgb(var(--gold-rgb) / <alpha-value>)",
+        "gold-hi": "rgb(var(--gold-hi-rgb) / <alpha-value>)",
+        leaf: "rgb(var(--leaf-rgb) / <alpha-value>)",
+        "leaf-deep": "rgb(var(--leaf-deep-rgb) / <alpha-value>)",
       },
       fontFamily: {
         fraunces: ["var(--font-fraunces)", "serif"],

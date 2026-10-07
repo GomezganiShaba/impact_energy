@@ -180,10 +180,10 @@ export default function PrivacyPage() {
                   </a>
                   {" "}or email{" "}
                   <a
-                    href="mailto:info@ies.mw"
+                    href="mailto:info@ies.engineer"
                     className="text-leaf-deep underline hover:text-leaf"
                   >
-                    info@ies.mw
+                    info@ies.engineer
                   </a>
                   . Impact Energy Solution (IES), P.O Box 1984, Lilongwe Area 23 and Area 49, Malawi.
                 </p>
@@ -196,3 +196,4 @@ export default function PrivacyPage() {
     </>
   );
 }
+

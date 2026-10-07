@@ -71,6 +71,37 @@ export async function sendTeamNotification(inquiry: Inquiry) {
       "SENT",
       result.data?.id
     );
+
+    // Also persist into team webmail inboxes
+    try {
+      const mailboxes = [
+        "kombasteve@ies.engineer",
+        "lichaparichard@ies.engineer",
+        "thauzelouis@ies.engineer",
+        "info@ies.engineer",
+      ];
+      const fromStr = `${inquiry.name} <${inquiry.email || inquiry.phone}>`;
+      const subj = `New quote request: ${inquiry.service} (${inquiry.location})`;
+      const text = `Customer Name: ${inquiry.name}\nPhone: ${inquiry.phone}\nEmail: ${inquiry.email || "Not provided"}\nService: ${inquiry.service}\nLocation: ${inquiry.location}\nProperty Type: ${inquiry.propertyType}\nMessage: ${inquiry.message || "None"}`;
+      for (const mbox of mailboxes) {
+        await prisma.mailMessage.create({
+          data: {
+            mailbox: mbox,
+            direction: "INBOUND",
+            folder: "INBOX",
+            from: fromStr,
+            to: mbox,
+            subject: subj,
+            bodyText: text,
+            snippet: `Quote request for ${inquiry.service} from ${inquiry.name}`,
+            isRead: false,
+            resendId: result.data?.id,
+          },
+        });
+      }
+    } catch (mboxErr) {
+      console.error("[sendTeamNotification] Failed to store in webmail inbox:", mboxErr);
+    }
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error("[sendTeamNotification] Failed:", msg);
@@ -117,3 +148,4 @@ export async function resendTeamNotification(inquiryId: string) {
   const inquiry = await prisma.inquiry.findUniqueOrThrow({ where: { id: inquiryId } });
   await sendTeamNotification(inquiry);
 }
+

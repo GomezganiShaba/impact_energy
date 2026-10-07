@@ -47,6 +47,11 @@ if (
 export async function rateLimit(
   identifier: string
 ): Promise<{ success: boolean; limit: number; remaining: number; reset: number }> {
+  // Skip rate limiting in development
+  if (process.env.NODE_ENV === "development") {
+    return { success: true, limit: 999, remaining: 998, reset: Date.now() + 3600000 };
+  }
+
   if (upstashRatelimit) {
     const result = await upstashRatelimit.limit(identifier);
     return {
@@ -56,6 +61,7 @@ export async function rateLimit(
       reset: result.reset,
     };
   }
-  // Fallback: 5 requests per hour per identifier
-  return inMemoryRateLimit(identifier, 5, 60 * 60 * 1000);
+  // Fallback: 20 requests per hour per identifier
+  return inMemoryRateLimit(identifier, 20, 60 * 60 * 1000);
 }
+

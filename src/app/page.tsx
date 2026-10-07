@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import VisionMission from "@/components/sections/VisionMission";
+import AreasOfOperation from "@/components/sections/AreasOfOperation";
 import Services from "@/components/sections/Services";
 import Process from "@/components/sections/Process";
 import Projects from "@/components/sections/Projects";
@@ -24,8 +25,8 @@ export default function Home() {
     description:
       "Solar power, water pumping and clean-cooking systems for homes, farms and institutions across Malawi.",
     telephone: "+265881682589",
-    email: ["info@ies.mw", "bussiness@ies.mw"],
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ies.mw",
+    email: ["info@ies.engineer", "bussiness@ies.engineer"],
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ies.engineer",
     address: [
       {
         "@type": "PostalAddress",
@@ -60,6 +61,7 @@ export default function Home() {
         <Hero />
         <About />
         <VisionMission />
+        <AreasOfOperation />
         <Services />
         <Process />
         <Projects />
@@ -71,3 +73,4 @@ export default function Home() {
     </>
   );
 }
+

@@ -176,3 +176,4 @@ When setting up your sending domain in Resend for `EMAIL_FROM`:
 4. Ensure `DATABASE_URL` connects to a pooled PostgreSQL instance (e.g. Neon serverless or Supabase).
 5. Build Command: `prisma generate && next build` (configured automatically via `package.json`).
 6. Deploy!
+

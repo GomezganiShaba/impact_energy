@@ -16,7 +16,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ies.mw"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ies.engineer"
   ),
   title: {
     default: "Impact Energy Solution | Solar & Clean Water, Lilongwe, Malawi",
@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "google6918818cc3644739",
+  },
 };
 
 export default function RootLayout({
@@ -79,3 +82,4 @@ export default function RootLayout({
     </html>
   );
 }
+

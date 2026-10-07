@@ -46,7 +46,7 @@ export default function QuotePage() {
               >
                 +265 881 682 589
               </a>
-              {" "}&mdash; Steve Khomba, Lilongwe Area 23 and Area 49.
+              {" "}- Steve Khomba, Lilongwe Area 23 and Area 49.
             </p>
           </div>
         </div>
@@ -55,3 +55,4 @@ export default function QuotePage() {
     </>
   );
 }
+

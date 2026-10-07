@@ -8,6 +8,16 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: [
+        "mail.ies.engineer",
+        "ies.engineer",
+        "www.ies.engineer",
+        "localhost:3000",
+      ],
+    },
+  },
   webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname, "src");
     return config;

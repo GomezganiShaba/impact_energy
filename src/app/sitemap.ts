@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { SERVICES_DETAILED } from "@/lib/services-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ies.mw";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ies.engineer";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -34,3 +34,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticRoutes, ...serviceRoutes];
 }
+

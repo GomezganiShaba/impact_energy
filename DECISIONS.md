@@ -65,3 +65,14 @@ This document records all architectural choices, assumptions, and implementation
 ## 6. Environment Workarounds
 
 - **Windows Native `realpath` Bug (Node.js 25 on Virtual Drives):** Node 25's `fs.promises.realpath` and `fs.realpathSync.native` throw false `ENOENT` on non-C: / virtual drives. A targeted patch was applied to Prisma's build runner and Vite's resolver to use Node's standard `fs.realpathSync`, enabling seamless builds and testing on all drive formats.
+
+---
+
+## 7. Webmail Subdomain (`mail.ies.engineer`) Architecture
+
+- **Dedicated Service Directory:** All webmail client views, components, and server actions are strictly encapsulated in `src/app/mail/`, with mail service logic in `src/lib/mail/`.
+- **Subdomain Routing in Middleware:** `src/middleware.ts` automatically rewrites requests matching `mail.ies.engineer` (or `mail.localhost` in development) to `/mail`, enabling the webmail portal to run as a native subdomain. Direct path access via `/mail` is also preserved.
+- **Database Persistence:** Real-time persistence via Prisma (`MailMessage` model) with support for folders (`INBOX`, `SENT`, `STARRED`, `TRASH`) and account switching (`kombasteve@ies.engineer`, `lichaparichard@ies.engineer`, `thauzelouis@ies.engineer`, `info@ies.engineer`, `bussiness@ies.engineer`).
+- **Inbound Webhook Support:** Inbound webhook at `/api/mail/webhook` ingests external incoming emails directly into the appropriate team mailboxes. Website inquiries automatically populate the inbox as well.
+- **Outbound Email Dispatch:** Sent via Resend transactional email API using the verified `ies.engineer` domain and stored under the user's `SENT` folder.
+

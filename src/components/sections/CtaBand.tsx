@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion, useReducedMotion } from "framer-motion";
@@ -11,6 +11,7 @@ export default function CtaBand() {
   const reduced = useReducedMotion();
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const successRef = useRef<HTMLDivElement>(null);
 
   const {
     register,
@@ -21,6 +22,20 @@ export default function CtaBand() {
     resolver: zodResolver(ctaInquirySchema),
     defaultValues: { name: "", phone: "", service: "not-sure" },
   });
+
+  useEffect(() => {
+    if (status === "success") {
+      successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [status]);
+
+  const onInvalid = (fieldErrors: typeof errors) => {
+    const msgs: string[] = [];
+    if (fieldErrors.name) msgs.push("Name must be at least 2 characters");
+    if (fieldErrors.phone) msgs.push("Valid phone number is required (e.g. 0881 234 567)");
+    setErrorMsg(msgs.join(" • ") || "Please enter your name and phone number to request a callback.");
+    setStatus("error");
+  };
 
   const onSubmit = async (data: CtaInquiryFormData) => {
     if (data._hp) return; // honeypot
@@ -91,18 +106,18 @@ export default function CtaBand() {
               </p>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
                 <a
-                  href="mailto:info@ies.mw"
+                  href="mailto:info@ies.engineer"
                   className="inline-flex items-center gap-1.5 text-ink font-semibold hover:text-leaf-deep underline decoration-gold underline-offset-2 transition-colors font-mono text-xs sm:text-sm"
                 >
                   <span aria-hidden="true">✉</span>
-                  info@ies.mw
+                  info@ies.engineer
                 </a>
                 <a
-                  href="mailto:bussiness@ies.mw"
+                  href="mailto:bussiness@ies.engineer"
                   className="inline-flex items-center gap-1.5 text-ink font-semibold hover:text-leaf-deep underline decoration-gold underline-offset-2 transition-colors font-mono text-xs sm:text-sm"
                 >
                   <span aria-hidden="true">✉</span>
-                  bussiness@ies.mw
+                  bussiness@ies.engineer
                 </a>
               </div>
             </div>
@@ -116,19 +131,31 @@ export default function CtaBand() {
             transition={{ duration: 0.6 }}
           >
             {status === "success" ? (
-              <div
+              <motion.div
+                ref={successRef}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
                 role="status"
                 aria-live="polite"
-                className="bg-dusk rounded-xl p-8 text-center"
+                className="bg-dusk rounded-xl p-8 text-center flex flex-col items-center gap-4"
               >
-                <p className="text-gold font-fraunces text-2xl mb-3">Received!</p>
-                <p className="text-on-dark font-medium">
-                  We will be in touch within one business day.
+                <span className="flex items-center justify-center h-16 w-16 rounded-full bg-gold/20 border-2 border-gold">
+                  <svg className="h-8 w-8 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <p className="text-gold font-fraunces text-2xl font-bold">Request Sent!</p>
+                <p className="text-on-dark/90 leading-relaxed">
+                  We received your callback request and will be in touch within one business day.
                 </p>
-              </div>
+                <a href="tel:+265881682589" className="mt-1 text-gold underline underline-offset-2 text-sm font-medium">
+                  Or call us now: +265 881 682 589
+                </a>
+              </motion.div>
             ) : (
               <form
-                onSubmit={handleSubmit(onSubmit)}
+                onSubmit={handleSubmit(onSubmit, onInvalid)}
                 noValidate
                 className="bg-dusk rounded-xl p-8 space-y-5"
               >
@@ -202,12 +229,22 @@ export default function CtaBand() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full py-3 rounded-md bg-gold text-dusk-deep font-bold text-sm hover:bg-gold-hi transition-colors disabled:opacity-60 disabled:cursor-not-allowed relative overflow-hidden group"
+                  className="w-full py-3 rounded-md bg-gold text-dusk-deep font-bold text-sm hover:bg-gold-hi transition-colors disabled:opacity-70 disabled:cursor-not-allowed relative overflow-hidden group flex items-center justify-center gap-2"
                 >
-                  <span className="relative z-10">
-                    {status === "loading" ? "Sending..." : "Request a callback"}
-                  </span>
-                  <span className="absolute inset-0 -skew-x-12 bg-white/20 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-500" />
+                  {status === "loading" ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4 text-dusk-deep flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                      </svg>
+                      <span>Sending your request...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Request a callback</span>
+                      <span className="absolute inset-0 -skew-x-12 bg-white/20 translate-x-[-150%] group-hover:translate-x-[150%] transition-transform duration-500" aria-hidden="true" />
+                    </>
+                  )}
                 </button>
               </form>
             )}
@@ -217,3 +254,4 @@ export default function CtaBand() {
     </section>
   );
 }
+

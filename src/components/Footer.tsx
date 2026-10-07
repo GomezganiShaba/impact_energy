@@ -105,16 +105,16 @@ export default function Footer() {
               </div>
               <div className="space-y-1 pt-1">
                 <a
-                  href="mailto:info@ies.mw"
+                  href="mailto:info@ies.engineer"
                   className="block text-gold hover:text-gold-hi transition-colors text-xs font-mono font-medium"
                 >
-                  info@ies.mw
+                  info@ies.engineer
                 </a>
                 <a
-                  href="mailto:bussiness@ies.mw"
+                  href="mailto:bussiness@ies.engineer"
                   className="block text-gold hover:text-gold-hi transition-colors text-xs font-mono font-medium"
                 >
-                  bussiness@ies.mw
+                  bussiness@ies.engineer
                 </a>
               </div>
               <a
@@ -149,3 +149,4 @@ export default function Footer() {
     </footer>
   );
 }
+

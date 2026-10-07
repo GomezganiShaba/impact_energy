@@ -15,12 +15,13 @@ export const inquirySchema = z.object({
     .max(25, "Phone number is too long")
     .transform((val) => normaliseMalawiPhone(val))
     .refine(
-      (val) => /^\+265\d{8,9}$/.test(val) || /^\+\d{10,15}$/.test(val),
+      (val) => /^\+265\d{7,10}$/.test(val) || /^\+\d{8,15}$/.test(val),
       "Please enter a valid phone number (e.g. 0881 234 567 or +265 881 234 567)"
     ),
 
   email: z
     .string()
+    .trim()
     .email("Please enter a valid email address")
     .optional()
     .or(z.literal("")),
@@ -48,14 +49,14 @@ export const inquirySchema = z.object({
     .max(1000, "Message must be under 1000 characters")
     .optional(),
 
-  consent: z.preprocess(
-    (val) => val === true || val === "true" || val === "on" || val === 1,
-    z.literal(true, {
-      errorMap: () => ({
-        message: "Please agree to the privacy policy to proceed",
-      }),
+  consent: z
+    .boolean({
+      required_error: "Please agree to the privacy policy to proceed",
+      invalid_type_error: "Please agree to the privacy policy to proceed",
     })
-  ),
+    .refine((val) => val === true, {
+      message: "Please agree to the privacy policy to proceed",
+    }),
 
   // Honeypot - must be empty
   _hp: z.string().max(0, "Spam detected").optional(),
@@ -72,10 +73,10 @@ export const ctaInquirySchema = z.object({
   phone: z
     .string()
     .min(7, "Phone number is too short")
-    .max(20, "Phone number is too long")
+    .max(25, "Phone number is too long")
     .transform((val) => normaliseMalawiPhone(val))
     .refine(
-      (val) => /^\+265\d{9}$/.test(val) || /^\+\d{10,15}$/.test(val),
+      (val) => /^\+265\d{7,10}$/.test(val) || /^\+\d{8,15}$/.test(val),
       "Please enter a valid Malawi phone number (e.g. 0881 234 567 or +265 881 234 567)"
     ),
 
@@ -96,10 +97,10 @@ export const compactInquirySchema = z.object({
   phone: z
     .string()
     .min(7, "Phone number is too short")
-    .max(20, "Phone number is too long")
+    .max(25, "Phone number is too long")
     .transform((val) => normaliseMalawiPhone(val))
     .refine(
-      (val) => /^\+265\d{9}$/.test(val) || /^\+\d{10,15}$/.test(val),
+      (val) => /^\+265\d{7,10}$/.test(val) || /^\+\d{8,15}$/.test(val),
       "Please enter a valid phone number"
     ),
   service: z.enum(serviceSlugs),
@@ -115,4 +116,5 @@ export const inquiryServerSchema = inquirySchema.extend({
 });
 
 export type InquiryServerData = z.infer<typeof inquiryServerSchema>;
+
 

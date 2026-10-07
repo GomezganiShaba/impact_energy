@@ -60,3 +60,4 @@ export default function VisionMission() {
     </section>
   );
 }
+

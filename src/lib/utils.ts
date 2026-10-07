@@ -14,18 +14,30 @@ export function cn(...inputs: ClassValue[]) {
  *   265881682589
  */
 export function normaliseMalawiPhone(raw: string): string {
+  if (!raw) return "";
   let digits = raw.replace(/\D/g, "");
 
+  // Handle +265 or 265 prefix with optional leading 0 (e.g. 2650881... -> +265881...)
   if (digits.startsWith("265")) {
-    return `+${digits}`;
+    let rest = digits.slice(3);
+    if (rest.startsWith("0")) {
+      rest = rest.slice(1);
+    }
+    return `+265${rest}`;
   }
+
+  // Strip local leading 0
   if (digits.startsWith("0")) {
     digits = digits.slice(1);
   }
-  if (digits.length >= 8 && digits.length <= 9) {
+
+  // 7 to 10 digits without country code is a Malawi local number (mobile or landline)
+  if (digits.length >= 7 && digits.length <= 10) {
     return `+265${digits}`;
   }
-  return `+${digits}`;
+
+  // Fallback for international numbers
+  return digits ? `+${digits}` : "";
 }
 
 /**
@@ -54,3 +66,4 @@ export const SERVICES = [
 ] as const;
 
 export type ServiceSlug = (typeof SERVICES)[number]["slug"];
+
